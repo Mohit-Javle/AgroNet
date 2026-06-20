@@ -25,8 +25,10 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        if (env('APP_ENV') === 'production' || env('APP_URL') !== 'http://localhost') {
-            URL::forceScheme('https');
+        if (!app()->runningInConsole()) {
+            if (request()->getHost() !== 'localhost' && request()->getHost() !== '127.0.0.1') {
+                URL::forceScheme('https');
+            }
         }
     }
 }
