@@ -1,8 +1,8 @@
-/* AgroNet Solutions — Main JavaScript */
+// Main JavaScript for AgroNet website
 
 document.addEventListener('DOMContentLoaded', function () {
 
-    /* ── Preloader ────────────────────────────────── */
+    // Page Preloader
     const preloader = document.getElementById('preloader');
     if (preloader) {
         window.addEventListener('load', function () {
@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    /* ── Sticky Header ────────────────────────────── */
+    // Sticky Header on Scroll
     const header = document.querySelector('.site-header');
     if (header) {
         window.addEventListener('scroll', function () {
@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    /* ── Back to Top ──────────────────────────────── */
+    // Back to Top button
     const backBtn = document.getElementById('back-to-top');
     if (backBtn) {
         window.addEventListener('scroll', function () {
@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    /* ── Mobile Menu ──────────────────────────────── */
+    // Mobile Menu Toggle
     const hamburger = document.querySelector('.hamburger');
     const mobileMenu = document.querySelector('.mobile-menu');
     const mobileClose = document.querySelector('.mobile-menu-close');
@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    /* ── Hero Swiper ──────────────────────────────── */
+    // Hero Slider
     if (document.querySelector('.swiper-hero')) {
         new Swiper('.swiper-hero', {
             loop: true,
@@ -72,7 +72,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    /* ── Products Swiper ──────────────────────────── */
+    // Products Slider
     if (document.querySelector('.swiper-products')) {
         new Swiper('.swiper-products', {
             loop: false,
@@ -91,7 +91,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    /* ── Testimonials Swiper ──────────────────────── */
+    // Testimonials Slider
     if (document.querySelector('.swiper-testimonials')) {
         new Swiper('.swiper-testimonials', {
             loop: true,
@@ -106,7 +106,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    /* ── Testimonials Custom Swiper ───────────────── */
+    // Custom Testimonials Navigation
     if (document.querySelector('.swiper-testimonials-custom')) {
         new Swiper('.swiper-testimonials-custom', {
             loop: true,
@@ -122,7 +122,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    /* ── AOS (scroll animations) ──────────────────── */
+    // Scroll Animations
     function initAOS() {
         const elements = document.querySelectorAll('[data-aos]');
         const observer = new IntersectionObserver(function (entries) {
@@ -140,7 +140,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
     initAOS();
 
-    /* ── Counter Animation ────────────────────────── */
+    // Animated Counters
     function animateCounter(el) {
         const target = parseInt(el.getAttribute('data-target'));
         const suffix = el.getAttribute('data-suffix') || '';
@@ -167,7 +167,7 @@ document.addEventListener('DOMContentLoaded', function () {
         counters.forEach(function (c) { counterObserver.observe(c); });
     }
 
-    /* ── Product Category Filter ──────────────────── */
+    // Category Filter Navigation
     const filterBtns = document.querySelectorAll('.filter-btn');
     filterBtns.forEach(function (btn) {
         btn.addEventListener('click', function () {
@@ -176,7 +176,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    /* ── Active Nav Link & Scrollspy ──────────────── */
+    // Active Navigation Highlight & Scrollspy
     const navLinks = document.querySelectorAll('.main-nav a, .mobile-nav a');
     const categoriesSection = document.getElementById('categories');
     const gallerySection = document.getElementById('gallery');
@@ -234,7 +234,7 @@ document.addEventListener('DOMContentLoaded', function () {
         updateActiveNavLink();
     }
 
-    /* ── Smooth image lazy load ───────────────────── */
+    // Image Lazy Loading
     document.querySelectorAll('img[data-src]').forEach(function (img) {
         const observer = new IntersectionObserver(function (entries) {
             entries.forEach(function (entry) {
@@ -248,7 +248,7 @@ document.addEventListener('DOMContentLoaded', function () {
         observer.observe(img);
     });
 
-    /* ── Gallery Lightbox ─────────────────────────── */
+    // Lightbox Modal for Gallery
     const galleryItems = document.querySelectorAll('.gallery-item-mock');
     const lightbox = document.getElementById('galleryLightbox');
     const lightboxImg = document.getElementById('lightboxImage');
