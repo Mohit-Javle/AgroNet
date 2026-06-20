@@ -347,9 +347,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 .site-logo img { height: 48px; width: auto; }
 
-.main-nav ul { display: flex; gap: 6px; align-items: center; }
-.main-nav ul li { position: relative; }
-.main-nav ul li a {
+.main-nav > ul { display: flex; gap: 6px; align-items: center; }
+.main-nav > ul > li { position: relative; }
+.main-nav > ul > li > a {
     font-family: var(--font-heading);
     font-weight: 600;
     font-size: 15px;
@@ -360,13 +360,13 @@ h1, h2, h3, h4, h5, h6 {
     display: block;
     transition: var(--transition);
 }
-.main-nav ul li a:hover {
+.main-nav > ul > li > a:hover {
     color: var(--primary);
     background: rgba(31, 122, 77, 0.05);
 }
 
 /* Redesigned Active State Bottom Underline */
-.main-nav ul li a.active, .main-nav ul li a.active-underline {
+.main-nav > ul > li > a.active, .main-nav > ul > li > a.active-underline {
     color: var(--primary) !important;
     background: transparent !important;
     border-bottom: 2px solid var(--accent) !important;
@@ -387,7 +387,7 @@ h1, h2, h3, h4, h5, h6 {
     top: calc(100% + 4px);
     left: 0;
     background: #FFFFFF;
-    min-width: 210px;
+    min-width: 250px;
     border-radius: var(--radius-md);
     box-shadow: var(--shadow-lg);
     border-top: 3px solid var(--primary);
@@ -397,18 +397,27 @@ h1, h2, h3, h4, h5, h6 {
     transition: var(--transition);
     z-index: 100;
     padding: 8px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
 }
 .main-nav .has-dropdown:hover .dropdown-menu {
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
 }
+.dropdown-menu li {
+    width: 100%;
+}
 .dropdown-menu li a {
-    padding: 9px 20px !important;
+    padding: 10px 20px !important;
     font-size: 14px !important;
     color: var(--text-dark) !important;
     border-radius: 0 !important;
     border-bottom: none !important;
+    display: block !important;
+    white-space: nowrap;
 }
 .dropdown-menu li a:hover {
     background: var(--bg-light) !important;

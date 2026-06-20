@@ -15,7 +15,6 @@
         <div class="hero-mock-grid">
             {{-- Left Column: Text & CTA --}}
             <div class="hero-mock-left" data-aos="fade-right">
-                <span class="hero-tag">Established Since 2004</span>
                 <h1 class="hero-title">Premium Shade Net & <br><span>Agricultural Net</span><br> Manufacturer</h1>
                 <p class="hero-text">
                     Providing high-quality agricultural, greenhouse, industrial and protective net solutions across India.
